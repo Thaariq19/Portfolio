@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week 3 Update | Group G18</title>
+  <title>Week 3 - Benchmarking Framework &amp; Architecture Design | Group G18</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -17,13 +17,13 @@
     </nav>
   </aside>
   <main class="page-shell">
-    <header class="week-hero"><p class="eyebrow">Group G18 Project Log</p><h1>Week 3 Update</h1><p>Use these sections to record weekly progress, decisions, evidence, and follow-up work.</p></header>
+    <header class="week-hero"><p class="eyebrow">Group G18 Project Log</p><h1>Week 3 &mdash; Benchmarking Framework &amp; Architecture Design</h1><p>Status: Completed | Dates: 04/05/2026 &ndash; 10/05/2026</p></header>
     <section class="update-grid" aria-label="Weekly update sections">
-      <article class="update-card"><h2>Goals for the Week</h2><div class="empty-area"></div></article>
-      <article class="update-card"><h2>Tasks Completed</h2><div class="empty-area"></div></article>
-      <article class="update-card"><h2>Technical Challenges</h2><div class="empty-area"></div></article>
-      <article class="update-card"><h2>Visual Evidence/Code</h2><div class="empty-area"></div></article>
-      <article class="update-card wide-card"><h2>Next Steps</h2><div class="empty-area"></div></article>
+      <article class="update-card"><h2>Goals for the Week</h2><div class="empty-area"><ul><li>Design a framework to separate temporal evidence into distinct region and boundary streams.</li><li>Draft the decoding architecture for the proposed MambaRefine-CD system.</li></ul></div></article>
+      <article class="update-card"><h2>Tasks Completed</h2><div class="empty-area"><ul><li>Designed the Differential Region-Boundary Interaction (D-RBI) module. This module applies two learned gating mechanisms: a region gate for stable changed-area responses and a Sobel-conditioned boundary gate for contour-sensitive evidence.</li><li>Drafted the Adaptive Receptive-Field (ARF) FPN to decode region features.</li><li>Conceptualized a bounded residual refinement head that uses the finest boundary stream to apply controlled corrections to coarse logits, reducing the risk of overwriting the global prediction.</li></ul></div></article>
+      <article class="update-card"><h2>Technical Challenges</h2><div class="empty-area"><ul><li>Formulating the Sobel-conditioned gate so that the edge cue is tied directly to temporal change evidence rather than ordinary image texture.</li></ul></div></article>
+      <article class="update-card"><h2>Visual Evidence/Code</h2><div class="empty-area"><p><code>Full system architecture for MambaRefine-CD finalized and ready for implementation.</code></p></div></article>
+      <article class="update-card wide-card"><h2>Next Steps</h2><div class="empty-area"><ul><li>Proceed to Week 4: Begin coding the shared MambaVision encoder and the D-RBI module in PyTorch.</li></ul></div></article>
     </section>
   </main>
   <script>document.documentElement.classList.add('js-enabled');</script>

@@ -177,55 +177,15 @@ h3 {
   background: rgba(255, 255, 255, 0.04);
 }
 
-.project-visual {
-  position: relative;
-  display: grid;
-  min-height: 420px;
-  overflow: hidden;
-  place-items: center;
-  border: 1px solid rgba(40, 216, 200, 0.28);
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, rgba(40, 216, 200, 0.11), rgba(58, 167, 255, 0.08)),
-    #101822;
-  box-shadow: var(--shadow);
-}
-
-.project-visual span {
-  position: relative;
-  z-index: 2;
-  color: rgba(244, 248, 251, 0.9);
-  font-size: clamp(3rem, 10vw, 6rem);
-  font-weight: 900;
-}
-
-.orbit-line {
-  position: absolute;
-  width: 72%;
-  aspect-ratio: 1;
-  border: 1px solid rgba(40, 216, 200, 0.5);
-  border-radius: 50%;
-  transform: rotate(-18deg) scaleY(0.42);
-}
-
-.scan-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(58, 167, 255, 0.13) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(58, 167, 255, 0.13) 1px, transparent 1px);
-  background-size: 34px 34px;
-  mask-image: linear-gradient(to bottom, transparent 0%, black 28%, black 72%, transparent 100%);
-}
-
-.hero-photo {
+.hero-image {
   display: block;
-  width: 100%;
-  min-height: 420px;
-  max-height: 560px;
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  justify-self: center;
   object-fit: cover;
   border: 1px solid rgba(40, 216, 200, 0.28);
-  border-radius: 8px;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.03);
   box-shadow: var(--shadow);
 }
@@ -241,30 +201,14 @@ h3 {
 
 .profile-layout {
   display: block;
+  max-width: 860px;
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: clamp(20px, 4vw, 36px);
   background: rgba(21, 27, 35, 0.68);
 }
 
-.profile-image-placeholder {
-  display: grid;
-  min-height: 320px;
-  place-items: center;
-  border: 1px dashed rgba(40, 216, 200, 0.58);
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, rgba(40, 216, 200, 0.12), rgba(58, 167, 255, 0.08)),
-    rgba(255, 255, 255, 0.03);
-}
-
-.profile-image-placeholder span {
-  color: var(--muted);
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.profile-copy h2 {
+.profile-layout h2 {
   margin-bottom: 18px;
 }
 
@@ -371,7 +315,27 @@ h3 {
   min-height: 150px;
   border: 1px dashed rgba(159, 176, 195, 0.34);
   border-radius: 8px;
+  padding: 18px 20px;
+  color: #dce6ef;
   background: rgba(255, 255, 255, 0.025);
+}
+
+.empty-area ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.empty-area li + li {
+  margin-top: 10px;
+}
+
+.empty-area p {
+  margin: 0;
+}
+
+.empty-area code {
+  color: var(--text);
+  white-space: normal;
 }
 
 .wide-card {
@@ -421,9 +385,8 @@ h3 {
     padding: 42px 0;
   }
 
-  .project-visual,
-  .hero-photo {
-    min-height: 300px;
+  .hero-image {
+    justify-self: start;
   }
 }
 

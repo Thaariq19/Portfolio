@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week 2 Update | Group G18</title>
+  <title>Week 2 - Review of Existing Pipelines | Group G18</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -17,13 +17,13 @@
     </nav>
   </aside>
   <main class="page-shell">
-    <header class="week-hero"><p class="eyebrow">Group G18 Project Log</p><h1>Week 2 Update</h1><p>Use these sections to record weekly progress, decisions, evidence, and follow-up work.</p></header>
+    <header class="week-hero"><p class="eyebrow">Group G18 Project Log</p><h1>Week 2 &mdash; Review of Existing Pipelines</h1><p>Status: Completed | Dates: 27/04/2026 &ndash; 03/05/2026</p></header>
     <section class="update-grid" aria-label="Weekly update sections">
-      <article class="update-card"><h2>Goals for the Week</h2><div class="empty-area"></div></article>
-      <article class="update-card"><h2>Tasks Completed</h2><div class="empty-area"></div></article>
-      <article class="update-card"><h2>Technical Challenges</h2><div class="empty-area"></div></article>
-      <article class="update-card"><h2>Visual Evidence/Code</h2><div class="empty-area"></div></article>
-      <article class="update-card wide-card"><h2>Next Steps</h2><div class="empty-area"></div></article>
+      <article class="update-card"><h2>Goals for the Week</h2><div class="empty-area"><ul><li>Evaluate how current change detection models fuse bi-temporal features.</li><li>Conceptualize a new temporal feature construction strategy.</li></ul></div></article>
+      <article class="update-card"><h2>Tasks Completed</h2><div class="empty-area"><ul><li>Investigated standard Siamese architectures that rely heavily on absolute differencing (<code>|F<sub>2</sub> - F<sub>1</sub>|</code>).</li><li>Identified a critical flaw in existing pipelines: absolute difference captures change magnitude but discards temporal direction, making the appearance and disappearance of objects indistinguishable.</li><li>Proposed a new differential feature construction method that retains paired features, absolute differences, and signed differences to give the network direction-aware evidence.</li></ul></div></article>
+      <article class="update-card"><h2>Technical Challenges</h2><div class="empty-area"><ul><li>Ensuring that preserving signed temporal evidence does not drastically increase the computational overhead of the feature fusion block.</li></ul></div></article>
+      <article class="update-card"><h2>Visual Evidence/Code</h2><div class="empty-area"><p><code>Theoretical framework for retaining signed and absolute temporal differences established.</code></p></div></article>
+      <article class="update-card wide-card"><h2>Next Steps</h2><div class="empty-area"><ul><li>Proceed to Week 3: Design the benchmarking framework and the region-boundary separation architecture.</li></ul></div></article>
     </section>
   </main>
   <script>document.documentElement.classList.add('js-enabled');</script>

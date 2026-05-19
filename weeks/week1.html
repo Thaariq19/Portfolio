@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week 1 Update | Group G18</title>
+  <title>Week 1 - Literature Review and Problem Definition | Group G18</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -38,34 +38,55 @@
   <main class="page-shell">
     <header class="week-hero">
       <p class="eyebrow">Group G18 Project Log</p>
-      <h1>Week 1 Update</h1>
-      <p>Use these sections to record weekly progress, decisions, evidence, and follow-up work.</p>
+      <h1>Week 1 &mdash; Literature Review and Problem Definition</h1>
+      <p>Status: Completed | Dates: 20/04/2026 &ndash; 26/04/2026</p>
     </header>
 
     <section class="update-grid" aria-label="Weekly update sections">
       <article class="update-card">
         <h2>Goals for the Week</h2>
-        <div class="empty-area"></div>
+        <div class="empty-area">
+          <ul>
+            <li>Conduct a literature review on remote sensing change detection, evaluating CNNs, Transformers, and Visual State-Space Models (SSMs).</li>
+            <li>Define the core localization challenges in binary change detection.</li>
+          </ul>
+        </div>
       </article>
 
       <article class="update-card">
         <h2>Tasks Completed</h2>
-        <div class="empty-area"></div>
+        <div class="empty-area">
+          <ul>
+            <li>Analyzed existing CNN encoder-decoder models and noted that their context modeling is bounded by the receptive field.</li>
+            <li>Evaluated Transformer and Mamba-based methods, determining that while they offer stronger global representations, they do not automatically resolve boundary localization errors.</li>
+            <li>Formulated the primary problem definition: encoder scaling alone is insufficient for boundary-sensitive tasks; the network must explicitly preserve fine boundaries.</li>
+          </ul>
+        </div>
       </article>
 
       <article class="update-card">
         <h2>Technical Challenges</h2>
-        <div class="empty-area"></div>
+        <div class="empty-area">
+          <ul>
+            <li>Identifying why models detect changed regions accurately but still produce shifted or over-smoothed masks near object boundaries.</li>
+          </ul>
+        </div>
       </article>
 
       <article class="update-card">
         <h2>Visual Evidence/Code</h2>
-        <div class="empty-area"></div>
+        <div class="empty-area">
+          <p><code>Literature review compiled, highlighting boundary delineation as the dominant failure mode under domain shift.</code></p>
+        </div>
       </article>
 
       <article class="update-card wide-card">
         <h2>Next Steps</h2>
-        <div class="empty-area"></div>
+        <div class="empty-area">
+          <ul>
+            <li>Proceed to Week 2: Review existing feature fusion pipelines and identify flaws in standard differencing methods.</li>
+          </ul>
+        </div>
       </article>
     </section>
   </main>
