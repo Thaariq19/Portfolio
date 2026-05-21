@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week 2 - Review of Existing Pipelines | Group G18</title>
+  <title>Week 2 - Review of Existing Pipelines &amp; Visual SSMs | Group G18</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -17,12 +17,13 @@
     </nav>
   </aside>
   <main class="page-shell">
-    <header class="week-hero"><p class="eyebrow">Group G18 Project Log</p><h1>Week 2 &mdash; Review of Existing Pipelines</h1><p>Status: Completed | Dates: 04/05/2026 &ndash; 10/05/2026</p></header>
+    <header class="week-hero"><p class="eyebrow">Group G18 Project Log</p><h1>Week 2 &mdash; Review of Existing Pipelines &amp; Visual SSMs</h1><p>Status: Completed | Dates: 04/05/2026 &ndash; 10/05/2026</p></header>
     <section class="update-grid" aria-label="Weekly update sections">
-      <article class="update-card"><h2>Goals for the Week</h2><div class="empty-area"><ul><li>Evaluate how current change detection models fuse bi-temporal features.</li><li>Conceptualize a new temporal feature construction strategy.</li></ul></div></article>
-      <article class="update-card"><h2>Tasks Completed</h2><div class="empty-area"><ul><li>Investigated standard Siamese architectures that rely heavily on absolute differencing (<code>|F<sub>2</sub> - F<sub>1</sub>|</code>).</li><li>Identified a critical flaw in existing pipelines: absolute difference captures change magnitude but discards temporal direction, making the appearance and disappearance of objects indistinguishable.</li><li>Proposed a new differential feature construction method that retains paired features, absolute differences, and signed differences to give the network direction-aware evidence.</li></ul></div></article>
-      <article class="update-card"><h2>Technical Challenges</h2><div class="empty-area"><ul><li>Ensuring that preserving signed temporal evidence does not drastically increase the computational overhead of the feature fusion block.</li></ul></div></article>
-      <article class="update-card"><h2>Next Steps</h2><div class="empty-area"><ul><li>Proceed to Week 3: Design the benchmarking framework and the region-boundary separation architecture.</li></ul></div></article>
+      <article class="update-card"><h2>Goals for the Week</h2><div class="empty-area"><ul><li>Evaluate how Mamba is adapted for 2D image processing.</li><li>Identify flaws in standard Siamese feature differencing pipelines.</li></ul></div></article>
+      <article class="update-card"><h2>Tasks Completed</h2><div class="empty-area"><ul><li>Studied VMamba to understand cross-scan style spatial modeling for 2D images.</li><li>Analyzed the MambaVision hybrid backbone to see how Mamba-style modeling can be combined with Transformer-style vision design.</li><li>Identified that standard absolute differencing in current pipelines discards temporal direction, formulated a plan for differential feature construction.</li></ul></div></article>
+      <article class="update-card"><h2>Technical Challenges</h2><div class="empty-area"><ul><li>Mapping 1D sequence modeling concepts to 2D spatial features without losing local neighborhood information.</li></ul></div></article>
+      <article class="update-card"><h2>Next Steps</h2><div class="empty-area"><ul><li>Proceed to Week 3: Design the specific benchmarking framework and feature fusion architecture for our project.</li></ul></div></article>
+      <article class="update-card"><h2>References</h2><div class="empty-area"><ul><li>VMamba: Visual State Space Model</li><li>MambaVision: A Hybrid Mamba-Transformer Vision Backbone</li></ul></div></article>
     </section>
   </main>
   <script>document.documentElement.classList.add('js-enabled');</script>

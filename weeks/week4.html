@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week 4 - Experimental Pipeline Implementation &amp; Dataset Setup | Group G18</title>
+  <title>Week 4 - Experimental Pipeline Implementation | Group G18</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -17,12 +17,13 @@
     </nav>
   </aside>
   <main class="page-shell">
-    <header class="week-hero"><p class="eyebrow">Group G18 Project Log</p><h1>Week 4 &mdash; Experimental Pipeline Implementation &amp; Dataset Setup</h1><p>Status: Completed | Dates: 18/05/2026 &ndash; 24/05/2026</p></header>
+    <header class="week-hero"><p class="eyebrow">Group G18 Project Log</p><h1>Week 4 &mdash; Experimental Pipeline Implementation</h1><p>Status: Completed | Dates: 18/05/2026 &ndash; 24/05/2026</p></header>
     <section class="update-grid" aria-label="Weekly update sections">
-      <article class="update-card"><h2>Goals for the Week</h2><div class="empty-area"><ul><li>Implement the core MambaRefine-CD architecture, including the MambaVision-S encoder, D-RBI, and CRAM-lite, in code.</li><li>Configure the data loading pipelines and the training environment for the selected datasets.</li><li>Deliverable: Finalize the Literature Review and Initial Setup documentation.</li></ul></div></article>
-      <article class="update-card"><h2>Tasks Completed</h2><div class="empty-area"><ul><li>Coded the shared MambaVision-S encoder and the CRAM-lite residual spatial modulation block.</li><li>Configured the data loading and preprocessing pipelines for the DSIFN-CD and WHU-CD datasets, integrating <code>256&times;256</code> cropping and random horizontal/vertical flips for data augmentation.</li><li>Implemented the compound training objective, combining BCE, Dice, coarse region loss, and a Sobel-edge <code>l<sub>1</sub></code> boundary loss (<code>L<sub>BCE</sub> + L<sub>Dice</sub> + 0.4L<sub>coarse</sub> + 0.1L<sub>boundary</sub></code>).</li><li>Set up the training loop using the AdamW optimizer, a cosine learning rate schedule, and Automatic Mixed Precision (AMP) for memory efficiency.</li><li>Compiled and submitted the Week 4 deliverable: Summary of background research and initial framework.</li></ul></div></article>
-      <article class="update-card"><h2>Technical Challenges</h2><div class="empty-area"><ul><li>Balancing the auxiliary loss weights for the coarse and boundary losses so they assist the network without overpowering the main BCE and Dice objectives during the initial training phases.</li></ul></div></article>
-      <article class="update-card"><h2>Next Steps</h2><div class="empty-area"><ul><li>Proceed to Week 5: Initial model training, behavior assessment of baseline models, and debugging the training loop.</li></ul></div></article>
+      <article class="update-card"><h2>Goals for the Week</h2><div class="empty-area"><ul><li>Implement the core architecture in code and configure the training loop.</li></ul></div></article>
+      <article class="update-card"><h2>Tasks Completed</h2><div class="empty-area"><ul><li>Coded the shared MambaVision-S encoder in PyTorch based on the architectural design from Week 3.</li><li>Configured the data loading and preprocessing pipelines for our bi-temporal datasets, including random horizontal/vertical flips.</li><li>Implemented the compound training objective ($\mathcal{L}_{BCE} + \mathcal{L}_{Dice} + 0.4\mathcal{L}_{coarse} + 0.1\mathcal{L}_{boundary}$).</li><li>Set up the training loop utilizing the AdamW optimizer and Automatic Mixed Precision (AMP).</li></ul></div></article>
+      <article class="update-card"><h2>Technical Challenges</h2><div class="empty-area"><ul><li>Managing memory constraints on the local GPU when passing high-resolution feature maps through the hybrid MambaVision backbone.</li></ul></div></article>
+      <article class="update-card"><h2>Next Steps</h2><div class="empty-area"><ul><li>Proceed to Week 5: Initial model evaluation, debugging, and baseline benchmarking.</li></ul></div></article>
+      <article class="update-card"><h2>References</h2><div class="empty-area"><ul><li>MambaVision: A Hybrid Mamba-Transformer Vision Backbone (Implementation reference)</li></ul></div></article>
     </section>
   </main>
   <script>document.documentElement.classList.add('js-enabled');</script>
