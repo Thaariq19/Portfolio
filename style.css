@@ -20,6 +20,18 @@ html {
   scroll-behavior: smooth;
 }
 
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -87,10 +99,11 @@ a {
 }
 
 .site-nav a {
+  border-left: 3px solid transparent;
   border-radius: 8px;
-  padding: 10px 12px;
+  padding: 10px 12px 10px 14px;
   color: var(--muted);
-  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
 .site-nav a:hover,
@@ -101,6 +114,11 @@ a {
   outline: none;
 }
 
+.site-nav a.active {
+  border-left-color: var(--accent);
+  background: rgba(40, 216, 200, 0.16);
+}
+
 .site-nav a:hover {
   transform: translateX(2px);
 }
@@ -109,6 +127,7 @@ a {
   width: min(1160px, calc(100% - var(--sidebar-width)));
   margin-left: var(--sidebar-width);
   padding: 48px clamp(22px, 5vw, 72px) 64px;
+  animation: pageFadeIn 0.4s ease both;
 }
 
 .hero-section {
@@ -175,6 +194,14 @@ h3 {
   padding: 8px 12px;
   color: var(--text);
   background: rgba(255, 255, 255, 0.04);
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.hero-meta span:hover {
+  border-color: rgba(40, 216, 200, 0.5);
+  background: rgba(40, 216, 200, 0.1);
+  box-shadow: 0 10px 28px rgba(40, 216, 200, 0.08);
+  transform: translateY(-2px);
 }
 
 .hero-image {
@@ -187,7 +214,7 @@ h3 {
   border: 1px solid rgba(40, 216, 200, 0.28);
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.03);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow), 0 0 44px rgba(40, 216, 200, 0.2);
 }
 
 .content-section {
@@ -235,6 +262,14 @@ h3 {
   border-radius: 8px;
   padding: 22px;
   background: rgba(21, 27, 35, 0.76);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover,
+.update-card:hover {
+  border-color: rgba(40, 216, 200, 0.38);
+  box-shadow: 0 18px 42px rgba(40, 216, 200, 0.12);
+  transform: translateY(-4px);
 }
 
 .info-card p,
@@ -387,6 +422,28 @@ h3 {
 
   .hero-image {
     justify-self: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .page-shell,
+  .site-nav a,
+  .hero-meta span,
+  .info-card,
+  .update-card {
+    animation: none;
+    transition: none;
+  }
+
+  .site-nav a:hover,
+  .hero-meta span:hover,
+  .info-card:hover,
+  .update-card:hover {
+    transform: none;
   }
 }
 
