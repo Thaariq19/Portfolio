@@ -99,11 +99,31 @@ a {
 }
 
 .site-nav a {
+  display: flex;
+  align-items: center;
   border-left: 3px solid transparent;
   border-radius: 8px;
   padding: 10px 12px 10px 14px;
   color: var(--muted);
   transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.status-dot {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+
+.status-dot.completed {
+  background: var(--accent);
+  box-shadow: 0 0 10px rgba(40, 216, 200, 0.72);
+}
+
+.status-dot.pending {
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .site-nav a:hover,
